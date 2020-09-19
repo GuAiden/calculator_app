@@ -66,4 +66,18 @@
         app:layout_constraintTop_toBottomOf="@+id/textview_first"
         app:layout_constraintVertical_bias="0.501" />
 
+    <Button
+        android:id="@+id/funny_button"
+        android:layout_width="145dp"
+        android:layout_height="82dp"
+        android:background="@color/buttonBackground"
+        android:text="@string/funny_button_text"
+        android:textColor="@android:color/black"
+        android:textColorHighlight="@android:color/holo_blue_dark"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/count_button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

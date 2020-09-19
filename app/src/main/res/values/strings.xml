@@ -10,4 +10,5 @@
     <string name="hello_first_fragment">0</string>
     <string name = "hit_button_text">Hit</string>
     <string name = "count_button_text">Count</string>
+    <string name = "funny_button_text">Fun</string>
 </resources>

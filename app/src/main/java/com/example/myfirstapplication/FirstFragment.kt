@@ -35,11 +35,15 @@ class FirstFragment : Fragment() {
 
         view.findViewById<Button>(R.id.hit_button).setOnClickListener {
             val myHit = Toast.makeText(context, "Hit me!", Toast.LENGTH_SHORT)
-            myHit.show();
+            myHit.show()
         }
 
         view.findViewById<Button>(R.id.count_button).setOnClickListener {
             countMe(view)
+        }
+
+        view.findViewById<Button>(R.id.funny_button).setOnClickListener {
+            findNavController().navigate(FirstFragmentDirections.actionFirstFragmentToSecondFragment(5))
         }
 
     }
