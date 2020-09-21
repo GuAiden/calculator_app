@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".learn_fragment"
+    android:id="@+id/frameLayout"
+    android:orientation = "vertical"
+    android:layout_gravity = "center_vertical">
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id ="@+id/learn_fragment_text"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_gravity = "center_horizontal"
+        android:textSize = "30sp"
+        android:text = "@string/learn_fragment_text"
+        android:visibility = "visible"/>
+    <Button
+        android:id="@+id/roll_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/roll_button_text"
+        android:visibility="visible" />
+
+</LinearLayout>
