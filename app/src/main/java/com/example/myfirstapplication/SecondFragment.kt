@@ -48,7 +48,5 @@ class SecondFragment : Fragment() {
         }
         view.findViewById<TextView>(R.id.textView_random).text = randomNumber.toString()
 
-
-
     }
 }
