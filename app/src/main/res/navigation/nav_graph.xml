@@ -27,5 +27,17 @@
         <argument
             android:name="myArg"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_SecondFragment_to_learnFragment"
+            app:destination="@id/learnFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/learnFragment"
+        android:name="com.example.myfirstapplication.LearnFragment"
+        android:label="fragment_learn"
+        tools:layout="@layout/fragment_learn" >
+        <action
+            android:id="@+id/action_learnFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>
