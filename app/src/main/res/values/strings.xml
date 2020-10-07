@@ -21,4 +21,6 @@
     <string name="learn_button_text">Learn</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_learn_fragment">Testing Layouts on this Frame</string>
+    <string name="learn_layouts_button_text">Learn Layouts</string>
+    <string name="return_to_learn_button">Return</string>
 </resources>

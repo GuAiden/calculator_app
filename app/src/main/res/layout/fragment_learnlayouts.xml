@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation = "vertical"
+    tools:context=".LearnLayoutsFragment"
+    android:layout_gravity = "center_vertical">
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_learn_fragment"
+        android:textSize="@dimen/text_size"
+        android:layout_gravity = "center_horizontal"/>
+
+    <Button
+        android:id="@+id/return_to_learn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/return_to_learn_button"
+        android:visibility = "visible"
+        android:layout_gravity = "center_horizontal"/>
+
+</LinearLayout>

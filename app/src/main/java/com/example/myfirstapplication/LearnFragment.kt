@@ -29,6 +29,10 @@ class LearnFragment : Fragment() {
             rollDice(view)
         }
 
+        view.findViewById<Button>(R.id.learn_layout_button).setOnClickListener() {
+            findNavController().navigate(R.id.action_learnFragment_to_learnLayoutsFragment)
+        }
+
     }
     
     private fun rollDice(view: View) {

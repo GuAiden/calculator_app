@@ -39,5 +39,17 @@
         <action
             android:id="@+id/action_learnFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_learnFragment_to_learnLayoutsFragment"
+            app:destination="@id/learnLayoutsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/learnLayoutsFragment"
+        android:name="com.example.myfirstapplication.LearnLayoutsFragment"
+        android:label="fragment_learnlayouts"
+        tools:layout="@layout/fragment_learnlayouts" >
+        <action
+            android:id="@+id/action_learnLayoutsFragment_to_learnFragment"
+            app:destination="@id/learnFragment" />
     </fragment>
 </navigation>
