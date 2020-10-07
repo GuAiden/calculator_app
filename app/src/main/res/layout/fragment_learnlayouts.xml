@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,9 +13,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/layout_margin"
+        android:padding="@dimen/small_padding"
         android:text="@string/hello_learn_fragment"
         android:textSize="@dimen/text_size"
-        android:layout_gravity = "center_horizontal"/>
+        app:fontFamily="@font/roboto" />
 
     <Button
         android:id="@+id/return_to_learn"
