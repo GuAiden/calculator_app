@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">My First Application</string>
     <string name="action_settings">Settings</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -20,7 +21,24 @@
     <string name="roll_button_text">Roll</string>
     <string name="learn_button_text">Learn</string>
     <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_learn_fragment">Testing Layouts on this Frame</string>
     <string name="learn_layouts_button_text">Learn Layouts</string>
     <string name="return_to_learn_button">Return</string>
+    <string name="my_avatar">My avatar</string>
+    <string name="biography"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                              Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt.
+                              Tortor at risus viverra adipiscing at in tellus. Vulputate ut pharetra sit amet aliquam.
+                              Sapien nec sagittis aliquam malesuada bibendum arcu. Et malesuada fames ac turpis egestas sed tempus.
+                              Magna eget est lorem ipsum. Ultricies mi quis hendrerit dolor. Nibh nisl condimentum id venenatis.
+                              Urna et pharetra pharetra massa massa. \n
+
+                              Quam quisque id diam vel quam elementum pulvinar. Sit amet tellus cras adipiscing.
+                              Ut morbi tincidunt augue interdum velit. Et tortor at risus viverra adipiscing at in tellus integer.
+                              Viverra aliquet eget sit amet tellus cras adipiscing enim. Ipsum suspendisse ultrices gravida dictum fusce.
+                              Sed risus ultricies tristique nulla aliquet. Lectus mauris ultrices eros in. Feugiat in fermentum posuere urna nec tincidunt praesent semper.
+                              Tincidunt tortor aliquam nulla facilisi. Urna neque viverra justo nec ultrices dui sapien. Vivamus arcu felis bibendum ut tristique et.
+                              Pellentesque habitant morbi tristique senectus et netus et malesuada fames. \n
+    </string>
 </resources>
