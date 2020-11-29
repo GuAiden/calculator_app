@@ -172,6 +172,8 @@
         android:layout_marginRight="24dp"
         android:background="@color/buttonBackground"
         android:text="@string/calc_equals"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calc_nine" />
 
