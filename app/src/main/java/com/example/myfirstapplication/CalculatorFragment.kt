@@ -31,6 +31,17 @@ class CalculatorFragment : Fragment() {
         return inflater.inflate(R.layout.calculator, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<Button>(R.id.calculator_return).setOnClickListener() {
+            findNavController().navigate(R.id.action_calculatorFragment_to_FirstFragment)
+        }
+
+    }
+
+
+
 
 
 

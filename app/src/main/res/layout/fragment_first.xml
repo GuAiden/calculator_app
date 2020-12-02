@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/screenBackground"
+    android:padding="8dp"
     tools:context=".FirstFragment">
 
     <TextView
@@ -22,11 +23,10 @@
         app:fontFamily="sans-serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        app:layout_constraintHorizontal_bias = "0.5"
-        />
+        app:layout_constraintVertical_bias="0.3" />
 
     <Button
         android:id="@+id/random_button"
@@ -78,5 +78,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/count_button" />
+
+    <Button
+        android:id="@+id/to_calculator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/buttonBackground"
+        android:padding="8dp"
+        android:text="@string/to_calculator"
+        app:layout_constraintBottom_toTopOf="@+id/count_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_first" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

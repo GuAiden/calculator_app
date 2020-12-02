@@ -46,6 +46,10 @@ class FirstFragment : Fragment() {
             findNavController().navigate(FirstFragmentDirections.actionFirstFragmentToSecondFragment(5))
         }
 
+        view.findViewById<Button>(R.id.to_calculator).setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_calculatorFragment)
+        }
+
     }
     private fun countMe(view: View) {
         // Get text view

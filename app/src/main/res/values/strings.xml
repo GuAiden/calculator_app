@@ -57,4 +57,5 @@
     <string name="zero">0</string>
     <string name="clear_calc_expression">C</string>
     <string name="calc_equals">=</string>
+    <string name="to_calculator">Calculator</string>
 </resources>
