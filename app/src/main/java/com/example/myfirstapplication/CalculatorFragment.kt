@@ -36,11 +36,83 @@ class CalculatorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Return button direction
         binding.calculatorReturn.setOnClickListener {
             findNavController().navigate(R.id.action_calculatorFragment_to_FirstFragment)
         }
+
+        // Calculator part
+        val expression = binding.calcExpression
+
+        binding.calcOne.setOnClickListener {
+            initializeText()
+            val text = expression.text.toString()
+            expression.text = text + "1"
+        }
+
+        binding.calcTwo.setOnClickListener {
+            initializeText()
+            val text = expression.text.toString()
+            expression.text = text + "2"
+        }
+
+        binding.calcThree.setOnClickListener {
+            initializeText()
+            val text = expression.text.toString()
+            expression.text = text + "3"
+        }
+
+        binding.calcFour.setOnClickListener {
+            initializeText()
+            val text = expression.text.toString()
+            expression.text = text + "4"
+        }
+
+        binding.calcFive.setOnClickListener {
+            initializeText()
+            val text = expression.text.toString()
+            expression.text = text + "5"
+        }
+
+        binding.calcSix.setOnClickListener {
+            initializeText()
+            val text = expression.text.toString()
+            expression.text = text + "6"
+        }
+        binding.calcSeven.setOnClickListener {
+            initializeText()
+            val text = expression.text.toString()
+            expression.text = text + "7"
+        }
+
+        binding.calcEight.setOnClickListener {
+            initializeText()
+            val text = expression.text.toString()
+            expression.text = text + "8"
+        }
+
+        binding.calcNine.setOnClickListener {
+            initializeText()
+            val text = expression.text.toString()
+            expression.text = text + "9"
+        }
+
+        binding.calcZero.setOnClickListener {
+            initializeText()
+            val text = expression.text.toString()
+            expression.text = text + "0"
+        }
     }
 
+//    private fun calculate() {
+//    }
+
+    private fun initializeText() {
+        val expression = binding.calcExpression
+        if (expression.text == "Enter Expression:") expression.text = ""
+        return
+    }
 
 //    companion object {
 //        /**

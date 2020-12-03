@@ -22,15 +22,13 @@
         app:layout_constraintVertical_bias="0.100000024" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/calc_expression"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
         android:text="@string/calc_expression"
         android:textColor="@android:color/background_light"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/calc_two"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header_calculator" />
@@ -41,34 +39,38 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="60dp"
         android:background="@color/buttonBackground"
         android:text="@string/one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/calc_expression" />
 
     <Button
         android:id="@+id/calc_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="60dp"
         android:background="@color/buttonBackground"
         android:text="@string/two"
         app:layout_constraintEnd_toStartOf="@+id/calc_three"
         app:layout_constraintStart_toEndOf="@+id/calc_one"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/calc_expression" />
 
     <Button
         android:id="@+id/calc_three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:background="@color/buttonBackground"
         android:text="@string/three"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calc_expression" />
 
     <Button
         android:id="@+id/calc_four"
@@ -79,6 +81,8 @@
         android:layout_marginTop="24dp"
         android:background="@color/buttonBackground"
         android:text="@string/four"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calc_one" />
 
@@ -102,6 +106,8 @@
         android:layout_marginRight="24dp"
         android:background="@color/buttonBackground"
         android:text="@string/six"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calc_three" />
 
@@ -114,6 +120,8 @@
         android:layout_marginTop="24dp"
         android:background="@color/buttonBackground"
         android:text="@string/seven"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calc_four" />
 
@@ -137,20 +145,22 @@
         android:layout_marginRight="24dp"
         android:background="@color/buttonBackground"
         android:text="@string/nine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calc_six" />
 
     <Button
         android:id="@+id/calc_zero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
-        android:background="@color/buttonBackground"
         android:text="@string/zero"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calc_seven" />
+        app:layout_constraintTop_toBottomOf="@+id/calc_seven"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        style="@style/button_style" />
 
     <Button
         android:id="@+id/calc_clear"
@@ -175,18 +185,81 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintTop_toBottomOf="@+id/calc_nine" />
 
     <Button
         android:id="@+id/calculator_return"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="40dp"
         android:background="@color/buttonBackground"
         android:text="@string/return_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calc_add" />
+
+    <Button
+        android:id="@+id/calc_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@color/buttonBackground"
+        android:minWidth="60dp"
+        android:minHeight="10dp"
+        android:text="@string/calc_add"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calc_zero" />
+
+    <Button
+        android:id="@+id/calc_sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@color/buttonBackground"
+        android:minWidth="60dp"
+        android:minHeight="10dp"
+        android:text="@string/calc_sub"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calc_clear" />
+
+    <Button
+        android:id="@+id/calc_mul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@color/buttonBackground"
+        android:minWidth="60dp"
+        android:minHeight="10dp"
+        android:text="@string/calc_mul"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calc_clear" />
+
+    <Button
+        android:id="@+id/calc_div"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@color/buttonBackground"
+        android:minWidth="60dp"
+        android:minHeight="10dp"
+        android:text="@string/calc_div"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calc_equals" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
