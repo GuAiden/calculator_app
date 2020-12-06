@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.text.isDigitsOnly
 import androidx.navigation.fragment.findNavController
 import com.example.myfirstapplication.databinding.CalculatorBinding
 import java.util.*
@@ -142,7 +143,13 @@ class CalculatorFragment : Fragment() {
             initializeText()
             // Push whatever is answer from the stack
             calculator.infixToPostfix(calcText.text.toString())
-            calcText.text = calculator.outputToString()
+            val result = calculator.calculate()
+            if (result != null) {
+                calcText.text = result.toString()
+            } else {
+                calcText.text = "Incorrect Expression!"
+                calculator.clear()
+            }
         }
 
         binding.calcClear.setOnClickListener {
@@ -210,14 +217,7 @@ class Calculator: PostfixCalculator {
             } else {
 
                 // Add whatever is inside the numBuffer
-                if (!numBuffer.isEmpty()) {
-                    var num = ""
-                    for (e in numBuffer.indices) {
-                        num += numBuffer[e]
-                    }
-                    output.add(num)
-                    numBuffer.clear()
-                }
+                bufferToOutput()
 
                 // If the precedence of the scanned operator is greater than
                 // the precendence of the operator in the stack (or empty), push it
@@ -236,11 +236,65 @@ class Calculator: PostfixCalculator {
                 }
             }
         }
+        // Add anything remaining inside the numberBuffer
+        bufferToOutput()
+
         // Add the rest of the operators to the output
         while (stack.lastOrNull() != null) {
             output.add(stack.lastOrNull().toString())
             stack.removeLast()
         }
+    }
+
+    fun calculate(): Any? {
+        var evaluateStack = ArrayDeque<Double>()
+        for (e in output.indices) {
+            if (output[e].isDigitsOnly()) {
+                evaluateStack.add(output[e].toDouble())
+            } else {
+                val operand1 = pop(evaluateStack)
+                val operand2 = pop(evaluateStack)
+                val result = operatorAction(output[e], operand1, operand2)
+                evaluateStack.add(result)
+            }
+        }
+        if (evaluateStack.size == 1) {
+            return evaluateStack.firstOrNull()
+        } else {
+            return null
+        }
+    }
+
+    private fun pop(stack:ArrayDeque<Double>): Double {
+        val pop = stack.lastOrNull()
+        if (pop != null) {
+            stack.removeLast()
+            return pop
+        }
+        return -1.0
+    }
+
+    private fun operatorAction(op: String, operand1: Double, operand2: Double): Double {
+        when (op) {
+            "+" -> return (operand1+operand2).toDouble()
+            "-" -> return (operand2-operand1).toDouble()
+            "x" -> return (operand1*operand2).toDouble()
+            "/" -> return (operand2/operand1).toDouble()
+        }
+        return -1.0
+    }
+
+    fun bufferToOutput(): String {
+        if (!numBuffer.isEmpty()) {
+            var num = ""
+            for (e in numBuffer.indices) {
+                num += numBuffer[e]
+            }
+            output.add(num)
+            numBuffer.clear()
+            return num
+        }
+        return ""
     }
 
     fun outputToString(): String {
