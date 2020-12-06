@@ -43,15 +43,13 @@ class CalculatorFragment : Fragment() {
         // Calculator part
         setListeners()
 
-
-
     }
 
     @ExperimentalStdlibApi
     private fun setListeners() {
         val calcText = binding.calcExpression
         var stack = ArrayDeque<String>(initialCapacity=20)
-
+        val calculator = Calculator()
         // Return button direction
         binding.calculatorReturn.setOnClickListener {
             findNavController().navigate(R.id.action_calculatorFragment_to_FirstFragment)
@@ -143,11 +141,13 @@ class CalculatorFragment : Fragment() {
         binding.calcEquals.setOnClickListener{
             initializeText()
             // Push whatever is answer from the stack
-            val text = calcText.text.toString()
+            calculator.infixToPostfix(calcText.text.toString())
+            calcText.text = calculator.outputToString()
         }
 
         binding.calcClear.setOnClickListener {
-            initializeText()
+            calcText.text = "Enter Expression:"
+            calculator.clear()
         }
     }
 
@@ -158,24 +158,33 @@ class CalculatorFragment : Fragment() {
     }
 }
 
-interface Convert {
+interface PostfixCalculator {
     fun isOperator(c: Char): Boolean
+    fun isOperand(c: Char): Boolean
     fun comparePrecedence(op1:Char, op2:Char): Boolean
     fun infixToPostfix(expression: String)
 }
 
 @ExperimentalStdlibApi
-class Calculator: Convert {
+class Calculator: PostfixCalculator {
 
     private val capacity = 20
-    private var stack = ArrayDeque<String>(initialCapacity = capacity)
+    private var stack = ArrayDeque<Char>(initialCapacity = capacity)
     private var output = ArrayDeque<String>(initialCapacity = capacity)
+    private var numBuffer = ArrayDeque<Char>(initialCapacity = capacity)
     private val precedence = mapOf('+' to 1, '-' to 1, 'x' to 2, '/' to 2)
-    private val operators = "+-*/"
+    private val operators = "+-x/"
 
     override fun isOperator(c: Char): Boolean {
         if (operators.contains(c)) {
             return true
+        }
+        return false
+    }
+
+    override fun isOperand(c: Char): Boolean {
+        if (c.isDigit()) {
+            return true;
         }
         return false
     }
@@ -195,6 +204,57 @@ class Calculator: Convert {
 
     override fun infixToPostfix(expression: String) {
         for (c in expression.indices) {
+            // If its an operand, add it to output stack
+            if (isOperand(expression[c])) {
+                numBuffer.add(expression[c])
+            } else {
+
+                // Add whatever is inside the numBuffer
+                if (!numBuffer.isEmpty()) {
+                    var num = ""
+                    for (e in numBuffer.indices) {
+                        num += numBuffer[e]
+                    }
+                    output.add(num)
+                    numBuffer.clear()
+                }
+
+                // If the precedence of the scanned operator is greater than
+                // the precendence of the operator in the stack (or empty), push it
+                if (stack.lastOrNull() == null
+                    || comparePrecedence(expression[c], stack.lastOrNull()!!)) {
+                    stack.add(expression[c])
+                } else {
+                    // Pop all operators of greater/equal precedence to current expression
+                    while (stack.lastOrNull() != null) {
+                        if (comparePrecedence(stack.lastOrNull()!!, expression[c])) {
+                            output.add(stack.lastOrNull().toString())
+                            stack.removeLast()
+                        }
+                    }
+                    stack.add(expression[c])
+                }
+            }
+        }
+        // Add the rest of the operators to the output
+        while (stack.lastOrNull() != null) {
+            output.add(stack.lastOrNull().toString())
+            stack.removeLast()
         }
     }
+
+    fun outputToString(): String {
+        var out = ""
+        for (e in output.indices) {
+            out += output[e]
+        }
+        return out
+    }
+
+    fun clear() {
+        stack.clear()
+        output.clear()
+        numBuffer.clear()
+    }
+
 }
