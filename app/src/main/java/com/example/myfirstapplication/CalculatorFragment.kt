@@ -260,9 +260,8 @@ class Calculator: PostfixCalculator {
         }
         if (evaluateStack.size == 1) {
             return evaluateStack.firstOrNull()
-        } else {
-            return null
         }
+        return null
     }
 
     private fun pop(stack:ArrayDeque<Double>): Double {
